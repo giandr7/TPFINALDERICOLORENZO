@@ -1,9 +1,5 @@
 # Trabajo práctico final de la materia "Adaptaciones del ambiente de trabajo"
-Integrantes:
-
-  De Rico, Gianni
-  
-  Lorenzo, Martín Alberto
+Integrantes: De Rico, Gianni; Lorenzo, Martín Alberto
   
   
 
