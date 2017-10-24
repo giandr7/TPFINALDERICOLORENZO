@@ -12,4 +12,22 @@ class Tarjeta{
         return $this->viajes_hechos;
     };
 }
-#Ahora veo como hago gianni, termine de estudiar grafos recien. Y todo lo que tenia se fue a la basura por no poder commitear. La prox acordate de invitarme. Besos, el chino
+
+    public function salePlata_salePlata($monto) {
+        if($monto == 332) {
+            $this->plata = $this->plata+388;
+            print("Costo carga: $".$this->monto." más un bonus de $56. Saldo (S.E.U.O): $".$this->plata."\n");
+        }
+        else{
+            if($monto == 500) {
+                $this->plata = $this->plata + 652;
+                print("Costo carga: $".$this->monto." más un bonus de $140. Saldo (S.E.U.O): $".$this->plata."\n");
+            }
+        }
+        else{
+            $this->plata = $this->plata+$monto;
+            print("Costo carga: $".$this->monto." . Saldo (S.E.U.O): $".$this->plata."\n");
+        }
+        return 0;
+    }
+#BOI I MADE IT
