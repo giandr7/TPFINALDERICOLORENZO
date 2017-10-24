@@ -2,6 +2,7 @@
 Integrantes: De Rico, Gianni; Lorenzo, Martín Alberto
   
   
+Link del TP: http://ips.dagos.info/Adaptacion%20del%20Ambiente%20de%20trabajo%20-%206to/00-Tp-final.pdf
 
 Formato de escritura: PSR-2
 
