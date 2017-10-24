@@ -1,6 +1,7 @@
 # Trabajo práctico final de la materia "Adaptaciones del ambiente de trabajo"
 Integrantes
   De Rico, Gianni
+  
   Lorenzo, Martín Alberto
 
 Formato de escritura: PSR-2
