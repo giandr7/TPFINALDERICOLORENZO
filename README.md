@@ -10,3 +10,5 @@ TravisCI: https://travis-ci.org/giandr7/TPFINALDERICOLORENZO
 Coveralls: https://coveralls.io/github/giandr7/TPFINALDERICOLORENZO
 
 :3
+
+23/10/17 Me acorde de autoinvitarme, ahora solo falta rehacer todo el trabajo que perdi con la compu grande. Gracias EPE
