@@ -2,15 +2,25 @@
 
 namespace TPFINALDERICOLORENZO;
 
-include Viajan2.php
+class Medium{
+    protected $lineaVehiculo, $ID, $Hora, $Dia;
+    
+    public function __construct($a, $b, $c, $d) {
+        $this->lineaVehiculo = $a;
+        $this->ID = $b;
+        $this->Hora = $c;
+        $this->Dia = $d;
+    }
+}
 
 class Tarjeta{
-    protected $colectivo, $monto, $viajes_hechos, $Data, $plata, $vplus;
+    protected $colectivo, $monto, $viajes_hechos, $Data, $plata, $vplus, $Bici;
     
     public function __construct($plata, $viajes_hechos) {
         $this->plata = 0;
         $this->viajes_hechos = 0;
         $this->vplus=0;
+        $this->BiciQ = 0;
     }
     
     public function credito() {
@@ -27,6 +37,10 @@ class Tarjeta{
         return 0;
         
     };
+    
+    public function cobrar_vplus($cant){
+        $this->plata = $this->plata - ($cant*8.50); 
+    }
 
     public function salePlata_salePlata($monto) {
         if($monto == 332) {
@@ -46,6 +60,21 @@ class Tarjeta{
         //Pagar luego de haber gastado los viajes plus te descuenta cant viajes plus + el tipo de viaje que pagas
         //Eso va a estar en el otro archivo. Acà entras vos Niaggi :*
         return 0;
-    }
+    };
+    
+    public function retirarBici(Transporte $transporte) {
+        if($this->BiciQ != $transporte->Dia) {
+            $this->BiciQ = 0;
+        }
+        elseif($this->BiciQ = 0) {
+            if($this->plata < 12.75) {echo "No se puede retirar la bicicleta.";}
+            else {
+                $this->plata = $this->plata - 12.75;
+                if($this->vplus > 0){cobrar_vplus($this->vplus);}
+                $this->BiciQ = $transporte->Dia;
+            }
+        }
+        else {echo "Se ha retirado la bicicleta.}
+    }; 
 }
 #BOI I MADE IT
