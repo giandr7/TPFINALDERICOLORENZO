@@ -14,46 +14,6 @@ class Medium{
 }
 
 class Tarjeta{
-    protected $colectivo, $monto, $viajes_hechos, $Data, $plata, $vplus, $Bici;
-    
-    public function __construct($plata, $viajes_hechos) {
-        $this->plata = 0;
-        $this->viajes_hechos = 0;
-        $this->vplus=0;
-        $this->BiciQ = 0;
-    };
-    
-    public function credito() {
-        print("Su saldo (S.E.U.O): $" . $this->plata . ".\n");
-    };
-
-    public function viajes_tomados() {
-        return $this->viajes_hechos;
-    };
-    
-    public function viajes_plus($vplus){
-        if($this->vplus=2){return 0;}
-        $this->vplus = $this->vplus +1;
-        return 0;
-        
-    };
-    
-    public function cobrar_vplus($cant){<?php
-
-namespace TPFINALDERICOLORENZO;
-
-class Medium{
-    protected $lineaVehiculo, $ID, $Hora, $Dia;
-    
-    public function __construct($a, $b, $c, $d) {
-        $this->lineaVehiculo = $a;
-        $this->ID = $b;
-        $this->Hora = $c;
-        $this->Dia = $d;
-    };
-}
-
-class Tarjeta{
     protected $colectivo, $monto, $viajes_hechos, $dia, $hora, $plata, $vplus, $Bici;
 
     protected $estudiante, $normal, $bicicleta, $transbordo; 
