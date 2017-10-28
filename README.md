@@ -8,13 +8,13 @@ Formato de escritura: PSR-2
 
 TravisCI: https://travis-ci.org/giandr7/TPFINALDERICOLORENZO
 
-Status: https://travis-ci.org/giandr7/TPFINALDERICOLORENZO.svg?branch=master
+Status: [![Build Status](https://travis-ci.org/giandr7/TPFINALDERICOLORENZO.svg?branch=master)](https://travis-ci.org/giandr7/TPFINALDERICOLORENZO)
 
 
 
 Coveralls: https://coveralls.io/github/giandr7/TPFINALDERICOLORENZO
 
-Status:[![Coverage Status](https://coveralls.io/repos/github/giandr7/TPFINALDERICOLORENZO/badge.svg?branch=master)](https://coveralls.io/github/giandr7/TPFINALDERICOLORENZO?branch=master)
+Status: [![Coverage Status](https://coveralls.io/repos/github/giandr7/TPFINALDERICOLORENZO/badge.svg?branch=master)](https://coveralls.io/github/giandr7/TPFINALDERICOLORENZO?branch=master)
 
 :3
 
