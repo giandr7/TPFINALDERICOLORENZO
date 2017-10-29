@@ -16,7 +16,7 @@ class Medium{
 class Tarjeta{
     protected $colectivo, $monto, $viajes_hechos, $dia, $hora, $plata, $vplus, $Bici;
     
-    protected $estudiante, $normal, $bicicleta, $transbordo; 
+    protected $estudiante, $normal, $bicicleta, $transbordo;
     
     public function __construct() {
         $this->plata = 0;
@@ -81,13 +81,13 @@ class Tarjeta{
         //Niaggi Re Dico, pensame una manera de comparar los tiempos. Necesito que hagas eso porque no me sale xd gg izi
         if($transporte->Hora = $this->hora+(30*60))
             if($MedioQ=1){
-            
+
             }
 
        }
     }
-       
-    
+
+
     public function retirarBici(Medium $transporte) {
         if($this->BiciQ != $transporte->Dia) {
             $this->BiciQ = 0;
@@ -106,7 +106,7 @@ class Tarjeta{
         credito();
     }
 }
-        $this->plata = $this->plata - ($cant*8.50); 
+        $this->plata = $this->plata - ($cant*8.50);
     };
 
     public function salePlata_salePlata($monto) {
@@ -143,6 +143,6 @@ class Tarjeta{
                 $this->BiciQ = $transporte->Dia;
             }
         }
-        else {echo "Se ha retirado la bicicleta.}
+        else {echo "Se ha retirado la bicicleta.";}
     };
 #BOI I MADE IT
