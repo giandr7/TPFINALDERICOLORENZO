@@ -15,7 +15,7 @@ class Medium{
 
 class Tarjeta{
     protected $colectivo, $monto, $viajes_hechos, $dia, $hora, $plata, $vplus, $Bici;
-
+    
     protected $estudiante, $normal, $bicicleta, $transbordo; 
     
     public function __construct() {
@@ -23,15 +23,14 @@ class Tarjeta{
         $this->viajes_hechos = 0;
         $this->vplus=0;
         $this->BiciQ = 0;
-
+        
         $this->estudiante =  4.45;
         $this->estudianteT = 1.32;
-
+        
         $this->normal = 8.50;
         $this->normalT = 2.64;
-       
-        $this->bicicleta = 12.75;
         
+        $this->bicicleta = 12.75;
     };
     
     public function credito() {
@@ -46,7 +45,6 @@ class Tarjeta{
         if($this->vplus=2){return 0;}
         $this->vplus = $this->vplus +1;
         return 0;
-        
     };
     
     public function cobrar_vplus($cant){
@@ -75,7 +73,7 @@ class Tarjeta{
     };
     
     public function subirseCole($medioQ, Medium $transporte){
-       if($this->vplus=2){
+        if($this->vplus=2){
         printf("Bajate pibe. No pasa nadie gratis aca.");
         return 0;
        }
@@ -83,7 +81,7 @@ class Tarjeta{
         //Niaggi Re Dico, pensame una manera de comparar los tiempos. Necesito que hagas eso porque no me sale xd gg izi
         if($transporte->Hora = $this->hora+(30*60))
             if($MedioQ=1){
-
+            
             }
 
        }
@@ -117,8 +115,8 @@ class Tarjeta{
             print("Costo carga: $".$this->monto." más un bonus de $56. Saldo (S.E.U.O): $".$this->plata."\n");
         }
         elseif($monto == 500) {
-                $this->plata = $this->plata + 652;
-                print("Costo carga: $".$this->monto." más un bonus de $140. Saldo (S.E.U.O): $".$this->plata."\n");
+            $this->plata = $this->plata + 652;
+            print("Costo carga: $".$this->monto." más un bonus de $140. Saldo (S.E.U.O): $".$this->plata."\n");
         }
         else{
             $this->plata = $this->plata+$monto;
