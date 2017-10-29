@@ -2,7 +2,8 @@
 
 namespace TPFINALDERICOLORENZO;
 
-class Medium{
+class Medium
+{
     protected $lineaVehiculo, $ID, $Hora, $Dia;
     
     public function __construct($a, $b, $c, $d) {
@@ -13,7 +14,8 @@ class Medium{
     };
 }
 
-class Tarjeta{
+class Tarjeta
+{
     protected $colectivo, $monto, $viajes_hechos, $dia, $hora, $plata, $vplus, $Bici;
     
     protected $estudiante, $normal, $bicicleta, $transbordo;
