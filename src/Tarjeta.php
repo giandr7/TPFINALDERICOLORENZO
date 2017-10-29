@@ -49,8 +49,7 @@ class Tarjeta
     
     public function viajes_plus()
     {
-        if($this->vplus=2)
-        {
+        if($this->vplus=2) {
             return 0;
         }
         $this->vplus = $this->vplus +1;
@@ -67,18 +66,13 @@ class Tarjeta
 
     public function salePlata_salePlata($monto)
     {
-        if($monto == 332)
-        {
+        if($monto == 332) {
             $this->plata = $this->plata+388;
             print("Costo carga: $".$this->monto." más un bonus de $56. Saldo (S.E.U.O): $".$this->plata."\n");
-        }
-        elseif($monto == 500)
-        {
+        } elseif($monto == 500) {
                 $this->plata = $this->plata + 652;
                 print("Costo carga: $".$this->monto." más un bonus de $140. Saldo (S.E.U.O): $".$this->plata."\n");
-        }
-        else
-        {
+        } else{
             $this->plata = $this->plata+$monto;
             print("Costo carga: $".$this->monto." . Saldo (S.E.U.O): $".$this->plata."\n");
         }
@@ -89,17 +83,13 @@ class Tarjeta
     
     public function subirseCole($medioQ, Medium $transporte)
     {
-        if($this->vplus=2)
-        {
+        if($this->vplus=2) {
         printf("Bajate pibe. No pasa nadie gratis aca.");
         return 0;
-        }
-        else
-        {
+        } else {
         //Niaggi Re Dico, pensame una manera de comparar los tiempos. Necesito que hagas eso porque no me sale xd gg izi
-        if($transporte->Hora = $this->hora+(30*60))
-        {
-            if($MedioQ=1){
+        if($transporte->Hora = $this->hora+(30*60)) {
+            if($MedioQ=1) {
 
           }
         }
@@ -109,30 +99,22 @@ class Tarjeta
 
     public function retirarBici(Medium $transporte)
     {
-        if($this->BiciQ != $transporte->Dia)
-        {
+        if($this->BiciQ != $transporte->Dia) {
             $this->BiciQ = 0;
-        }
-        elseif($this->BiciQ = 0)
-        {
-            if($this->plata < $this->bicicleta)
-            {
+        } elseif($this->BiciQ = 0) {
+            if($this->plata < $this->bicicleta) {
                 echo "No se puede retirar la bicicleta.\n";
             }
             //Viajes plus no utilizables en Bicicletas.
-            else
-            {
+            else {
                 $this->plata = $this->plata - $this->bicicleta;
-                if($this->vplus > 0)
-                {
+                if($this->vplus > 0) {
                     cobrar_vplus($this->vplus);
                 }
                 //Viajes plus cobrables en voleto de bici
                 $this->BiciQ = $transporte->Dia;
             }
-        }
-        else
-        {
+        } else {
             echo "Se ha retirado la bicicleta.\n";
         }
         credito();
@@ -142,18 +124,13 @@ class Tarjeta
     
     public function salePlata_salePlata($monto)
     {
-        if($monto == 332)
-        {
+        if($monto == 332) {
             $this->plata = $this->plata+388;
             print("Costo carga: $".$this->monto." más un bonus de $56. Saldo (S.E.U.O): $".$this->plata."\n");
-        }
-        elseif($monto == 500)
-        {
+        } elseif($monto == 500) {
             $this->plata = $this->plata + 652;
             print("Costo carga: $".$this->monto." más un bonus de $140. Saldo (S.E.U.O): $".$this->plata."\n");
-        }
-        else
-        {
+        } else {
             $this->plata = $this->plata+$monto;
             print("Costo carga: $".$this->monto." . Saldo (S.E.U.O): $".$this->plata."\n");
         }
@@ -168,28 +145,19 @@ class Tarjeta
     
     public function retirarBici(Transporte $transporte)
     {
-        if($this->BiciQ != $transporte->Dia)
-        {
+        if($this->BiciQ != $transporte->Dia) {
             $this->BiciQ = 0;
-        }
-        elseif($this->BiciQ = 0)
-        {
-            if($this->plata < 12.75)
-            {
+        } elseif($this->BiciQ = 0) {
+            if($this->plata < 12.75) {
                 echo "No se puede retirar la bicicleta.";
-            }
-            else
-            {
+            } else {
                 $this->plata = $this->plata - 12.75;
-                if($this->vplus > 0)
-                {
+                if($this->vplus > 0) {
                     cobrar_vplus($this->vplus);
                 }
                 $this->BiciQ = $transporte->Dia;
             }
-        }
-        else
-        {
+        } else {
             echo "Se ha retirado la bicicleta.";
         }
     };
