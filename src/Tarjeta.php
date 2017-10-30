@@ -17,7 +17,7 @@ class Medium
 
 class Tarjeta
 {
-    protected $colectivo, $monto, $viajes_hechos, $dia, $hora, $plata, $vplus, $Bici;
+    protected $colectivo, $last_colectivo, $monto, $viajes_hechos, $dia, $hora, $plata, $vplus, $Bici;
     
     protected $estudiante, $normal, $bicicleta, $transbordo;
     
@@ -81,21 +81,32 @@ class Tarjeta
         return 0;
     };
     
-    public function subirseCole($medioQ, Medium $transporte)
+    public function subirseCole($medioQ, Medium $transporte, $colectivo)
     {
         if($this->vplus=2) {
         printf("Bajate pibe. No pasa nadie gratis aca.");
         return 0;
         } else {
-        //Niaggi Re Dico, pensame una manera de comparar los tiempos. Necesito que hagas eso porque no me sale xd gg izi
-        if($transporte->Hora = $this->hora+(30*60)) {
-            if($MedioQ=1) {
+        if($last_colectivo != $colectivo && $this->hora + 86400 <= time()) {
+            if($MedioQ==1) {
+            	$this->plata = $this->plata - $this->estudianteT;
 
+          } else {
+          		$this->plata = $this->plata - $this->normalT;
+          	}
           }
-        }
+          
+          elseif($MedioQ==1) { 
+          	$this->plata = $this->plata - $this->estudiante;
+          }
+          else{
+          	$this->plata = $this->plata - $this->normal;
+          } 
+          $this->last_colectivo = $colectivo;
       }
-    }
 
+    }
+}
 
     public function retirarBici(Medium $transporte)
     {
