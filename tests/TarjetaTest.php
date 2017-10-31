@@ -1,15 +1,38 @@
 <?php
 
 namespace TPFINALDERICOLORENZO;
-
 use PHPUnit\Framework\TestCase;
 
 class TarjetaTest extends TestCase
 {
-  public function testSalePlata()
+  public function testSalePlata1()
   {
     $tarjeta = new Tarjeta();
-    salePlata_salePlata(500);
+    $tarjeta->salePlata_salePlata(500);
     $this->assertEquals($Tarjeta->plata(), 652);
+  }
+  
+   public function testSalePlata2()
+  {
+    $tarjeta = new Tarjeta();
+    $tarjeta->salePlata_salePlata(332);
+    $this->assertEquals($Tarjeta->plata(), 388);
+  }
+  
+   public function testSalePlata3()
+  {
+    $tarjeta = new Tarjeta();
+    $tarjeta->salePlata_salePlata(50);
+    $this->assertEquals($Tarjeta->plata(), 50);
+  }
+  
+   public function testViajecito()
+  {
+    $tarjeta = new Tarjeta();
+    $tarjeta->salePlata_salePlata(8.50);
+    $C138 = new Medium(138,"Colectivo",0);
+    $C139 = new Medium(139,"Colectivo",0);
+    $tarjeta->subirseCole(0, $C139);
+    $this->assertEquals($Tarjeta->plata(), 0);
   }
 }
