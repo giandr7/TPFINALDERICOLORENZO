@@ -12,7 +12,7 @@ class Medium
         $this->ID = $b;
         $this->Hora = $c;
         $this->Dia = $d;
-    };
+    }
 }
 
 class Tarjeta
@@ -35,17 +35,17 @@ class Tarjeta
         $this->normalT = 2.64;
         
         $this->bicicleta = 12.75;
-    };
+    }
     
     public function credito()
     {
         print("Su saldo (S.E.U.O): $" . $this->plata . ".\n");
-    };
+    }
 
     public function viajes_tomados()
     {
         return $this->viajes_hechos;
-    };
+    }
     
     public function viajes_plus()
     {
@@ -55,7 +55,7 @@ class Tarjeta
         }
         $this->vplus = $this->vplus +1;
         return 0;
-    };
+    }
     
     public function cobrar_vplus($cant)
     {
@@ -63,7 +63,7 @@ class Tarjeta
         printf("Se han cobrado ".$cant." viaje(s) plus.\n");
         $this->vplus = 0;
         //Pagar restaura la cantidad de viajes plus disponibles.
-    };
+    }
 
     public function salePlata_salePlata($monto)
     {
@@ -83,7 +83,7 @@ class Tarjeta
         //Pagar luego de haber gastado los viajes plus te descuenta cant viajes plus + el tipo de viaje que pagas
         //Eso va a estar en el otro archivo. Acà entras vos Niaggi :*
         return 0;
-    };
+    }
     
     public function subirseCole($medioQ, Medium $transporte, $colectivo)
     {
@@ -115,7 +115,7 @@ class Tarjeta
           	$this->last_colectivo = $colectivo;
           	$this->viajes_hechos = $this->viajes_hechos + 1;
       		}
-	};
+	}
 
     public function retirarBici(Medium $transporte)
     {
@@ -146,7 +146,7 @@ class Tarjeta
             echo "Se ha retirado la bicicleta.\n";
         }
         credito();
-    };
+    }
     
     public function salePlata_salePlata($monto)
     {
@@ -170,5 +170,5 @@ class Tarjeta
         //Pagar luego de haber gastado los viajes plus te descuenta cant viajes plus + el tipo de viaje que pagas
         //Eso va a estar en el otro archivo. Acà entras vos Niaggi :*
         return 0;
-    };
+    }
 #BOI I MADE IT
