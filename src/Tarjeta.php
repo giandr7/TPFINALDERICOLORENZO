@@ -49,7 +49,8 @@ class Tarjeta
     
     public function viajes_plus()
     {
-        if($this->vplus=2) {
+        if($this->vplus=2) 
+        {
             return 0;
         }
         $this->vplus = $this->vplus +1;
@@ -58,7 +59,7 @@ class Tarjeta
     
     public function cobrar_vplus($cant)
     {
-        $this->plata = $this->plata - ($cant*8.50);
+        $this->plata = $this->plata - ($cant * $this->normal);
         printf("Se han cobrado ".$cant." viaje(s) plus.\n");
         $this->vplus = 0;
         //Pagar restaura la cantidad de viajes plus disponibles.
@@ -66,13 +67,16 @@ class Tarjeta
 
     public function salePlata_salePlata($monto)
     {
-        if($monto == 332) {
+        if($monto == 332) 
+        {
             $this->plata = $this->plata+388;
             print("Costo carga: $".$this->monto." más un bonus de $56. Saldo (S.E.U.O): $".$this->plata."\n");
-        } elseif($monto == 500) {
+        } elseif($monto == 500) 
+        {
                 $this->plata = $this->plata + 652;
                 print("Costo carga: $".$this->monto." más un bonus de $140. Saldo (S.E.U.O): $".$this->plata."\n");
-        } else{
+        } else
+        {
             $this->plata = $this->plata+$monto;
             print("Costo carga: $".$this->monto." . Saldo (S.E.U.O): $".$this->plata."\n");
         }
@@ -83,65 +87,81 @@ class Tarjeta
     
     public function subirseCole($medioQ, Medium $transporte, $colectivo)
     {
-        if($this->vplus=2) {
-        printf("Bajate pibe. No pasa nadie gratis aca.");
-        return 0;
-        } else {
-        if($last_colectivo != $colectivo && $this->hora + 86400 <= time()) {
-            if($MedioQ==1) {
-            	$this->plata = $this->plata - $this->estudianteT;
-
-          } else {
-          		$this->plata = $this->plata - $this->normalT;
-          	}
-          }
-          
-          elseif($MedioQ==1) { 
-          	$this->plata = $this->plata - $this->estudiante;
-          }
-          else{
-          	$this->plata = $this->plata - $this->normal;
-          } 
-          $this->last_colectivo = $colectivo;
-      }
-
-    }
-}
+        if($this->vplus=2) 
+        {
+        	printf("Bajate pibe. No pasa nadie gratis aca.");
+        	return 0;
+        } else 
+        	{
+     		if($last_colectivo != $colectivo && $this->hora + 86400 <= time())
+       		{
+          		if($MedioQ==1) 
+            	{
+            		$this->plata = $this->plata - $this->estudianteT;
+          		} 
+          		else 
+          		{
+          			$this->plata = $this->plata - $this->normalT;
+          		}
+         	}
+	          elseif($MedioQ==1) 
+	          { 
+	          	$this->plata = $this->plata - $this->estudiante;
+	          }
+	          else
+	          {
+	          	$this->plata = $this->plata - $this->normal;
+	          } 
+          	$this->last_colectivo = $colectivo;
+          	$this->viajes_hechos = $this->viajes_hechos + 1;
+      		}
+	};
 
     public function retirarBici(Medium $transporte)
     {
-        if($this->BiciQ != $transporte->Dia) {
+        if($this->BiciQ != $transporte->Dia) 
+        {
             $this->BiciQ = 0;
-        } elseif($this->BiciQ = 0) {
-            if($this->plata < $this->bicicleta) {
+        } 
+        elseif($this->BiciQ = 0) 
+        {
+            if($this->plata < $this->bicicleta) 
+            {
                 echo "No se puede retirar la bicicleta.\n";
             }
             //Viajes plus no utilizables en Bicicletas.
-            else {
+            else 
+            {
                 $this->plata = $this->plata - $this->bicicleta;
-                if($this->vplus > 0) {
+                if($this->vplus > 0) 
+                {
                     cobrar_vplus($this->vplus);
                 }
                 //Viajes plus cobrables en voleto de bici
                 $this->BiciQ = $transporte->Dia;
             }
-        } else {
+        } 
+        else 
+        {
             echo "Se ha retirado la bicicleta.\n";
         }
         credito();
-        
-        $this->plata = $this->plata - ($cant*8.50);
     };
     
     public function salePlata_salePlata($monto)
     {
-        if($monto == 332) {
+        if($monto == 332) 
+        {
             $this->plata = $this->plata+388;
             print("Costo carga: $".$this->monto." más un bonus de $56. Saldo (S.E.U.O): $".$this->plata."\n");
-        } elseif($monto == 500) {
+        } 
+        elseif($monto == 500) 
+        {
             $this->plata = $this->plata + 652;
             print("Costo carga: $".$this->monto." más un bonus de $140. Saldo (S.E.U.O): $".$this->plata."\n");
-        } else {
+        } 
+        else 
+        {
             $this->plata = $this->plata+$monto;
             print("Costo carga: $".$this->monto." . Saldo (S.E.U.O): $".$this->plata."\n");
         }
@@ -150,26 +170,5 @@ class Tarjeta
         //Pagar luego de haber gastado los viajes plus te descuenta cant viajes plus + el tipo de viaje que pagas
         //Eso va a estar en el otro archivo. Acà entras vos Niaggi :*
         return 0;
-    };
-    
-    public function subirseCole(Transporte)
-    
-    public function retirarBici(Transporte $transporte)
-    {
-        if($this->BiciQ != $transporte->Dia) {
-            $this->BiciQ = 0;
-        } elseif($this->BiciQ = 0) {
-            if($this->plata < 12.75) {
-                echo "No se puede retirar la bicicleta.";
-            } else {
-                $this->plata = $this->plata - 12.75;
-                if($this->vplus > 0) {
-                    cobrar_vplus($this->vplus);
-                }
-                $this->BiciQ = $transporte->Dia;
-            }
-        } else {
-            echo "Se ha retirado la bicicleta.";
-        }
     };
 #BOI I MADE IT
