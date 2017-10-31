@@ -123,7 +123,7 @@ class Tarjeta
         {
             $this->BiciQ = 0;
         } 
-        elseif($this->BiciQ = 0) 
+        elseif($this->BiciQ == 0) 
         {
             if($this->plata < $this->bicicleta) 
             {
