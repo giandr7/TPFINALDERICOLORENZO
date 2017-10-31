@@ -147,28 +147,4 @@ class Tarjeta
         }
         credito();
     }
-    
-    public function salePlata_salePlata($monto)
-    {
-        if($monto == 332) 
-        {
-            $this->plata = $this->plata+388;
-            print("Costo carga: $".$this->monto." más un bonus de $56. Saldo (S.E.U.O): $".$this->plata."\n");
-        } 
-        elseif($monto == 500) 
-        {
-            $this->plata = $this->plata + 652;
-            print("Costo carga: $".$this->monto." más un bonus de $140. Saldo (S.E.U.O): $".$this->plata."\n");
-        } 
-        else 
-        {
-            $this->plata = $this->plata+$monto;
-            print("Costo carga: $".$this->monto." . Saldo (S.E.U.O): $".$this->plata."\n");
-        }
-        //Cargar credito restaura viajes plus.
-        $this->vplus = 0;
-        //Pagar luego de haber gastado los viajes plus te descuenta cant viajes plus + el tipo de viaje que pagas
-        //Eso va a estar en el otro archivo. Acà entras vos Niaggi :*
-        return 0;
-    }
 }
