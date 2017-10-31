@@ -85,7 +85,7 @@ class Tarjeta
         return 0;
     }
     
-    public function subirseCole($medioQ, Medium $transporte, $colectivo)
+    public function subirseCole($medioQ, Medium $transporte)
     {
         if($this->vplus==2 && $this->plata < $this->normal) 
         {
@@ -93,7 +93,7 @@ class Tarjeta
         	return 0;
         } else 
         	{
-     		if($last_colectivo != $colectivo && $this->hora + 86400 <= time())
+     		if($last_colectivo != $transporte->linea && $this->hora + 86400 <= time())
        		{
           		if($MedioQ==1) 
             	{
@@ -112,7 +112,7 @@ class Tarjeta
 	          {
 	          	$this->plata = $this->plata - $this->normal;
 	          } 
-          	$this->last_colectivo = $colectivo;
+          	$this->last_colectivo = $transporte->linea;
           	$this->viajes_hechos = $this->viajes_hechos + 1;
       		}
 	}
