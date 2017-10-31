@@ -4,14 +4,13 @@ namespace TPFINALDERICOLORENZO;
 
 class Medium
 {
-    protected $lineaVehiculo, $ID, $Hora, $Dia;
+    protected $lineaVehiculo, $ID, $Hora;
     
-    public function __construct($a, $b, $c, $d)
+    public function __construct($a, $b, $c)
     {
         $this->lineaVehiculo = $a;
         $this->ID = $b;
         $this->Hora = $c;
-        $this->Dia = $d;
     }
 }
 
@@ -26,7 +25,7 @@ class Tarjeta
         $this->plata = 0;
         $this->viajes_hechos = 0;
         $this->vplus=0;
-        $this->BiciQ = 0;
+        $this->Bici = 0;
         
         $this->estudiante =  4.45;
         $this->estudianteT = 1.32;
@@ -39,7 +38,7 @@ class Tarjeta
     
     public function credito()
     {
-        print("Su saldo (S.E.U.O): $" . $this->plata . ".\n");
+        printf("Su saldo (S.E.U.O): $" . $this->plata . ".\n");
     }
 
     public function viajes_tomados()
@@ -70,15 +69,15 @@ class Tarjeta
         if($monto == 332) 
         {
             $this->plata = $this->plata+388;
-            print("Costo carga: $".$this->monto." más un bonus de $56. Saldo (S.E.U.O): $".$this->plata."\n");
+            printf("Costo carga: $".$this->monto." más un bonus de $56. Saldo (S.E.U.O): $".$this->plata."\n");
         } elseif($monto == 500) 
         {
                 $this->plata = $this->plata + 652;
-                print("Costo carga: $".$this->monto." más un bonus de $140. Saldo (S.E.U.O): $".$this->plata."\n");
+                printf("Costo carga: $".$this->monto." más un bonus de $140. Saldo (S.E.U.O): $".$this->plata."\n");
         } else
         {
             $this->plata = $this->plata+$monto;
-            print("Costo carga: $".$this->monto." . Saldo (S.E.U.O): $".$this->plata."\n");
+            printf("Costo carga: $".$this->monto." . Saldo (S.E.U.O): $".$this->plata."\n");
         }
         //Pagar luego de haber gastado los viajes plus te descuenta cant viajes plus + el tipo de viaje que pagas
         //Eso va a estar en el otro archivo. Acà entras vos Niaggi :*
@@ -119,15 +118,17 @@ class Tarjeta
 
     public function retirarBici(Medium $transporte)
     {
-        if($this->BiciQ != $transporte->Dia) 
+	$this->Bici=time();
+        if($this->Bici <= $transporte->Hora + (24*60*60)) 
         {
-            $this->BiciQ = 0;
-        } 
-        elseif($this->BiciQ == 0) 
+            printf("Se ha retirado la bicicleta.\n");
+	    return 0;
+        }
+        else
         {
             if($this->plata < $this->bicicleta) 
             {
-                echo "No se puede retirar la bicicleta.\n";
+               printf("No se puede retirar la bicicleta.\n");
             }
             //Viajes plus no utilizables en Bicicletas.
             else 
@@ -138,13 +139,11 @@ class Tarjeta
                     cobrar_vplus($this->vplus);
                 }
                 //Viajes plus cobrables en voleto de bici
-                $this->BiciQ = $transporte->Dia;
+                $transporte->Hora = time();
             }
-        } 
-        else 
-        {
-            echo "Se ha retirado la bicicleta.\n";
         }
+	printf("Se ha retirado la bicicleta.\n");
         credito();
+	return 0;
     }
 }
