@@ -16,7 +16,7 @@ class Medium
 
 class Tarjeta
 {
-    public $colectivo, $last_colectivo, $monto, $viajes_hechos, $dia, $hora, $plata, $vplus, $Bici;
+    public $colectivo, $ult_colectivo, $monto, $viajes_hechos, $dia, $hora, $plata, $vplus, $Bici;
     
     public $estudiante, $normal, $bicicleta, $transbordo;
     
@@ -111,7 +111,7 @@ class Tarjeta
 	          {
 	          	$this->plata = $this->plata - $this->normal;
 	          } 
-          	$this->last_colectivo = $transporte->linea;
+          	$this->ult_colectivo = $transporte->lineaVehiculo;
           	$this->viajes_hechos = $this->viajes_hechos + 1;
       		}
 	}
