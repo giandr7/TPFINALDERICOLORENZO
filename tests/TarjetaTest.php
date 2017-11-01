@@ -17,7 +17,7 @@ class TarjetaTest extends TestCase
     $tarjeta = new Tarjeta();
     $tarjeta->salePlata_salePlata(17);
     $tarjeta->vplus=2;
-    $tarjeta->cobrar_vplis($tarjeta->vplus);
+    $tarjeta->cobrar_vplus($tarjeta->vplus);
     $this->assertEquals($tarjeta->plata, 0);
   }
   
