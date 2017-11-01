@@ -12,6 +12,15 @@ class TarjetaTest extends TestCase
     $this->assertEquals($tarjeta->plata, 0);
   }
   
+  public function testCViajeplus()
+  {
+    $tarjeta = new Tarjeta();
+    $tarjeta->salePlata_salePlata(17);
+    $tarjeta->vplus=2;
+    $tarjeta->cobrar_vplis($tarjeta->vplus);
+    $this->assertEquals($tarjeta->plata, 0);
+  }
+  
   public function testSalePlata1()
   {
     $tarjeta = new Tarjeta();
