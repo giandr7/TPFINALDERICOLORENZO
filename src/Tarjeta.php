@@ -94,7 +94,7 @@ class Tarjeta
         	{
      		if($this->ult_colectivo != $transporte->lineaVehiculo && $this->hora + 86400 <= time())
        		{
-          		if($MedioQ==1) 
+          		if($medioQ==1) 
             	{
             		$this->plata = $this->plata - $this->estudianteT;
           		} 
@@ -103,7 +103,7 @@ class Tarjeta
           			$this->plata = $this->plata - $this->normalT;
           		}
          	}
-	          elseif($MedioQ==1) 
+	          elseif($medioQ==1) 
 	          { 
 	          	$this->plata = $this->plata - $this->estudiante;
 	          }
