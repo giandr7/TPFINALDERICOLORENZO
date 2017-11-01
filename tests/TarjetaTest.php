@@ -5,6 +5,20 @@ use PHPUnit\Framework\TestCase;
 
 class TarjetaTest extends TestCase
 {
+  public function testViajesHechos()
+  {
+    $tarjeta = new Tarjeta();
+    $tarjeta->viajes_tomados();
+    $this->assertEquals($tarjeta->viajes_hechos, 0);
+  }
+  
+  public function testSaldo()
+  {
+    $tarjeta = new Tarjeta();
+    $tarjeta->credito();
+    $this->assertEquals($tarjeta->plata, 0);
+  }
+  
   public function testSalePlata1()
   {
     $tarjeta = new Tarjeta();
@@ -25,6 +39,14 @@ class TarjetaTest extends TestCase
     $tarjeta->salePlata_salePlata(50);
     $this->assertEquals($tarjeta->plata, 50);
   }
+  
+  public function testViajecito_Raja_aca_pibe()
+  {
+    $tarjeta = new Tarjeta();
+    $C139 = new Medium(139,"Colectivo",0);
+    $tarjeta->subirseCole(0, $C139);
+    $this->assertEquals($tarjeta->plata, 0);
+  } 
   
    public function testViajecito()
   {
