@@ -86,7 +86,7 @@ class Tarjeta
     
     public function subirseCole($medioQ, Medium $transporte)
     {
-        if($this->vplus==2 && $this->plata < $this->normal) 
+        if(($this->vplus==2 && $this->plata < $this->normal) || $this->plata < $this->normal) 
         {
         	printf("Bajate pibe. No pasa nadie gratis aca.");
         	return 0;
