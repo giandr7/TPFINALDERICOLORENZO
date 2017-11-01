@@ -40,11 +40,6 @@ class Tarjeta
     {
         printf("Su saldo (S.E.U.O): $" . $this->plata . ".\n");
     }
-
-    public function viajes_tomados()
-    {
-        return $this->viajes_hechos;
-    }
     
     public function viajes_plus()
     {
