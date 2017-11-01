@@ -5,13 +5,6 @@ use PHPUnit\Framework\TestCase;
 
 class TarjetaTest extends TestCase
 {
-  public function testViajesHechos()
-  {
-    $tarjeta = new Tarjeta();
-    $tarjeta->viajes_tomados();
-    $this->assertEquals($tarjeta->viajes_hechos, 0);
-  }
-  
   public function testSaldo()
   {
     $tarjeta = new Tarjeta();
