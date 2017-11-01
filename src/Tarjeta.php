@@ -16,7 +16,7 @@ class Medium
 
 class Tarjeta
 {
-    public $colectivo, $ult_colectivo, $monto, $viajes_hechos, $dia, $hora, $plata, $vplus, $Bici;
+    public $colectivo, $ult_colectivo, $monto, $viajes_hechos, $dia, $hora, $plata, $vplus, $medioQ, $Bici;
     
     public $estudiante, $normal, $bicicleta, $transbordo;
     
