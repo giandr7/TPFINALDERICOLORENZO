@@ -9,21 +9,21 @@ class TarjetaTest extends TestCase
   {
     $tarjeta = new Tarjeta();
     $tarjeta->salePlata_salePlata(500);
-    $this->assertEquals($tarjeta->plata(), 652);
+    $this->assertEquals($tarjeta->plata, 652);
   }
   
    public function testSalePlata2()
   {
     $tarjeta = new Tarjeta();
     $tarjeta->salePlata_salePlata(332);
-    $this->assertEquals($tarjeta->plata(), 388);
+    $this->assertEquals($tarjeta->plata, 388);
   }
   
    public function testSalePlata3()
   {
     $tarjeta = new Tarjeta();
     $tarjeta->salePlata_salePlata(50);
-    $this->assertEquals($tarjeta->plata(), 50);
+    $this->assertEquals($tarjeta->plata, 50);
   }
   
    public function testViajecito()
@@ -33,6 +33,6 @@ class TarjetaTest extends TestCase
     $C138 = new Medium(138,"Colectivo",0);
     $C139 = new Medium(139,"Colectivo",0);
     $tarjeta->subirseCole(0, $C139);
-    $this->assertEquals($tarjeta->plata(), 0);
+    $this->assertEquals($tarjeta->plata, 0);
   }
 }
