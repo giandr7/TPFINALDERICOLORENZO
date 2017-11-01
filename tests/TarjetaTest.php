@@ -29,9 +29,9 @@ class TarjetaTest extends TestCase
    public function testViajecito()
   {
     $tarjeta = new Tarjeta();
-    $tarjeta->salePlata_salePlata(8.50);
     $C138 = new Medium(138,"Colectivo",0);
     $C139 = new Medium(139,"Colectivo",0);
+    $tarjeta->salePlata_salePlata(8.50);
     $tarjeta->subirseCole(0, $C139);
     $this->assertEquals($tarjeta->plata, 0);
   }
