@@ -92,7 +92,7 @@ class Tarjeta
         	return 0;
         } else 
         	{
-     		if($this->ult_colectivo != $transporte->lineaVehiculo && $this->hora + 86400 <= time())
+     		if($this->ult_colectivo != $transporte->lineaVehiculo && ($this->hora + 86400) >= time())
        		{
           		if($medioQ==1) 
             	{
