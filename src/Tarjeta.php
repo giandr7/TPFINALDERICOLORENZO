@@ -4,7 +4,7 @@ namespace TPFINALDERICOLORENZO;
 
 class Medium
 {
-    protected $lineaVehiculo, $ID, $Hora;
+    public $lineaVehiculo, $ID, $Hora;
     
     public function __construct($a, $b, $c)
     {
@@ -16,9 +16,9 @@ class Medium
 
 class Tarjeta
 {
-    protected $colectivo, $last_colectivo, $monto, $viajes_hechos, $dia, $hora, $plata, $vplus, $Bici;
+    public $colectivo, $last_colectivo, $monto, $viajes_hechos, $dia, $hora, $plata, $vplus, $Bici;
     
-    protected $estudiante, $normal, $bicicleta, $transbordo;
+    public $estudiante, $normal, $bicicleta, $transbordo;
     
     public function __construct()
     {
