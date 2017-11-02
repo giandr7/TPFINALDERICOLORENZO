@@ -5,6 +5,30 @@ use PHPUnit\Framework\TestCase;
 
 class TarjetaTest extends TestCase
 {
+  public function testviajes_plus()
+  {
+    $tarjeta = new Tarjeta();
+    $tarjeta->viajes_plus();
+    $this->assertEquals($tarjeta->vplus, 1);
+  }
+  
+  public function testviajes_plus2()
+  {
+    $tarjeta = new Tarjeta();
+    $tarjeta->viajes_plus();
+    $tarjeta->viajes_plus();
+    $this->assertEquals($tarjeta->vplus, 2);
+  }
+  
+  public function testviajes_plus3()
+  {
+    $tarjeta = new Tarjeta();
+    $tarjeta->viajes_plus();
+    $tarjeta->viajes_plus();
+    $tarjeta->viajes_plus();
+    $this->assertEquals($tarjeta->vplus, 2);
+  }
+  
   public function testSaldo()
   {
     $tarjeta = new Tarjeta();
@@ -46,8 +70,9 @@ class TarjetaTest extends TestCase
   {
     $tarjeta = new Tarjeta();
     $C139 = new Medium(139,"Colectivo",0);
+    $tarjeta->vplus=2;
     $tarjeta->subirseCole(0, $C139);
-    $this->assertEquals($tarjeta->plata, 0);
+    $this->assertEquals($tarjeta->gg, 1);
   } 
   
    public function testViajecito()
@@ -68,4 +93,22 @@ class TarjetaTest extends TestCase
     $tarjeta->subirseCole(0, $C139);
     $this->assertEquals($tarjeta->plata, 0);
   }
+  
+   public function testViajecitoEstudiantePechoPeludoEspaldaDePlata()
+  {
+    $tarjeta = new Tarjeta();
+    $C139 = new Medium(139,"Colectivo",0);
+    $tarjeta->salePlata_salePlata(4.25);
+    $tarjeta->subirseCole(1, $C139);
+    $this->assertEquals($tarjeta->plata, 0);
+  }
+  
+   public function testViajecitoPlus()
+  {
+    $tarjeta = new Tarjeta();
+    $C139 = new Medium(139,"Colectivo",0);
+    $tarjeta->subirseCole(0, $C139);
+    $this->assertEquals($tarjeta->vplus, 1);
+  }
+
 }
