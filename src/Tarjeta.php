@@ -83,6 +83,7 @@ class Tarjeta
         else 
         {
           if($this->ult_colectivo != $transporte->lineaVehiculo && ($this->hora + 3600) >= time())
+	//Corregir el tema de la hora, updatear $this->hora en algun momento
           {
               if($medioQ==1) 
               {
