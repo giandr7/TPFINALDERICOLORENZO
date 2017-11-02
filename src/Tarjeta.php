@@ -15,7 +15,7 @@ class Medium
 
 class Tarjeta
 {
-    public $colectivo, $ult_colectivo, $monto, $viajes_hechos, $dia, $hora, $plata, $vplus, $medioQ, $Bici, $gg;
+    public $colectivo, $ult_colectivo, $monto, $viajes_hechos, $dia, $hora, $plata, $vplus, $medioQ, $Bici, $gg=0;
     
     public $estudiante, $normal, $bicicleta, $transbordo;
     
@@ -80,7 +80,6 @@ class Tarjeta
     
     public function subirseCole($medioQ, Medium $transporte)
     {
-	$this->gg = 0;
         if(($this->vplus==2 && $this->plata < $this->normal) || ($this->vplus==2 && $this->plata < $this->estudiante) || ($this->vplus==2 && $this->plata < $this->normalT) || ($this->vplus==2 && $this->plata < $this->estudianteT)) 
         {
           printf("Bajate pibe. No pasa nadie gratis aca.");
@@ -89,7 +88,7 @@ class Tarjeta
         } 
         else 
         {
-          if($this->ult_colectivo != $transporte->lineaVehiculo && ($this->hora + 86400) >= time())
+          if($this->ult_colectivo != $transporte->lineaVehiculo && ($this->hora + 3600) >= time())
           {
               if($medioQ==1) 
               {
@@ -149,7 +148,7 @@ class Tarjeta
     public function retirarBici(Medium $transporte)
     {
 	$this->Bici=time();
-        if($this->Bici <= ($transporte->Hora + (24*60*60))) 
+        if($this->Bici < ($transporte->Hora + (86400) + 1)) 
         {
             printf("Se ha retirado la bicicleta.\n");
 	    return 0;
