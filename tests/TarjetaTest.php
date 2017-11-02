@@ -110,5 +110,12 @@ class TarjetaTest extends TestCase
     $tarjeta->subirseCole(0, $C139);
     $this->assertEquals($tarjeta->vplus, 1);
   }
-
+  
+  public function testBici()
+  {
+    $tarjeta = new Tarjeta();
+    $bici_bici = new Medium(1,"Bicicleta",0);
+    $tarjeta->salePlata_salePlata(12.75);
+    $tarjeta->retirarBici($bici_bici);
+    $this->assertEquals($tarjeta->plata,0);
 }
