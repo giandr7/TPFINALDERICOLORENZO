@@ -16,7 +16,7 @@ class Medium
 
 class Tarjeta
 {
-    public $colectivo, $ult_colectivo, $monto, $viajes_hechos, $dia, $hora, $plata, $vplus, $medioQ, $Bici;
+    public $colectivo, $ult_colectivo, $monto, $viajes_hechos, $dia, $hora, $plata, $vplus, $medioQ, $Bici, $gg;
     
     public $estudiante, $normal, $bicicleta, $transbordo;
     
@@ -81,9 +81,11 @@ class Tarjeta
     
     public function subirseCole($medioQ, Medium $transporte)
     {
+	$this->gg = 0;
         if(($this->vplus==2 && $this->plata < $this->normal) || $this->plata < $this->normal) 
         {
           printf("Bajate pibe. No pasa nadie gratis aca.");
+	  $this->gg = 1;
           return 0;
         } 
         else 
