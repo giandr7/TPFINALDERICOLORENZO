@@ -4,7 +4,7 @@ namespace TPFINALDERICOLORENZO;
 
 class Medium
 {
-    public $lineaVehiculo, $ID, $Hora;
+    public $lineaVehiculo, $ID;
     
     public function __construct($a, $b)
     {
@@ -15,7 +15,7 @@ class Medium
 
 class Tarjeta
 {
-    public $colectivo, $ult_colectivo, $monto, $dia, $hora, $plata, $vplus, $medioQ, $Bici, $gg=0, $estudiante, $normal, $bicicleta, $transbordo;
+    public $colectivo, $ult_colectivo, $monto, $dia, $hora, $Thora, $plata, $vplus, $medioQ, $Bici, $gg=0, $estudiante, $normal, $bicicleta, $transbordo;
     
     public function __construct()
     {
@@ -83,7 +83,7 @@ class Tarjeta
         } 
         else 
         {
-          if($this->ult_colectivo != $transporte->lineaVehiculo && ($this->hora - 3600) <= $transporte->Hora)
+          if($this->ult_colectivo != $transporte->lineaVehiculo && ($this->hora - 3600) <= $this->Thora)
           {
               if($medioQ==1) 
               {
@@ -134,7 +134,7 @@ class Tarjeta
                 $this->plata = $this->plata - $this->normal;
               };
           }
-	    $transporte->Hora = $this->hora;
+	    $this->Thora = $this->hora;
             $this->credito(); 
             $this->ult_colectivo = $transporte->lineaVehiculo;
         }
@@ -143,7 +143,7 @@ class Tarjeta
     public function retirarBici(Medium $transporte)
     {
 	$this->Bici=time();
-        if($this->Bici <= ($transporte->Hora + (86400))) 
+        if($this->Bici <= ($this->Thora + (86400))) 
         {
             printf("Se ha retirado la bicicleta.\n");
 	    return 0;
@@ -157,7 +157,7 @@ class Tarjeta
             else 
             {
                 $this->plata = $this->plata - $this->bicicleta;
-                $transporte->Hora = $this->Bici;
+                $this->Thora = $this->Bici;
 		printf("Se ha retirado la bicicleta.\n");
             }
         }
