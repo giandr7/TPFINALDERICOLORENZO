@@ -74,6 +74,7 @@ class Tarjeta
     
     public function subirseCole($medioQ, Medium $transporte)
     {
+	$this->hora=time();
         if(($this->vplus==2 && $this->plata < $this->normal) || ($this->vplus==2 && $this->plata < $this->estudiante) || ($this->vplus==2 && $this->plata < $this->normalT) || ($this->vplus==2 && $this->plata < $this->estudianteT)) 
         {
           printf("Bajate pibe. No pasa nadie gratis aca.");
@@ -82,8 +83,7 @@ class Tarjeta
         } 
         else 
         {
-          if($this->ult_colectivo != $transporte->lineaVehiculo && ($this->hora + 3600) >= time())
-	//Corregir el tema de la hora, updatear $this->hora en algun momento
+          if($this->ult_colectivo != $transporte->lineaVehiculo && ($this->hora - 3600) <= $transporte->Hora)
           {
               if($medioQ==1) 
               {
@@ -134,6 +134,7 @@ class Tarjeta
                 $this->plata = $this->plata - $this->normal;
               };
           }
+	    $transporte->Hora = $this->hora;
             $this->credito(); 
             $this->ult_colectivo = $transporte->lineaVehiculo;
         }
