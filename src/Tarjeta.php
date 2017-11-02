@@ -6,11 +6,10 @@ class Medium
 {
     public $lineaVehiculo, $ID, $Hora;
     
-    public function __construct($a, $b, $c)
+    public function __construct($a, $b)
     {
         $this->lineaVehiculo = $a;
         $this->ID = $b;
-        $this->Hora = $c;
     }
 }
 
@@ -150,7 +149,7 @@ class Tarjeta
     public function retirarBici(Medium $transporte)
     {
 	$this->Bici=time();
-        if($this->Bici <= $transporte->Hora + (24*60*60)) 
+        if($this->Bici <= ($transporte->Hora + (24*60*60))) 
         {
             printf("Se ha retirado la bicicleta.\n");
 	    return 0;
@@ -170,7 +169,7 @@ class Tarjeta
                     cobrar_vplus($this->vplus);
                 }
                 //Viajes plus cobrables en voleto de bici
-                $transporte->Hora = time();
+                $transporte->Hora = $this->Bici;
             }
         }
 	printf("Se ha retirado la bicicleta.\n");
