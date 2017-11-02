@@ -148,7 +148,7 @@ class Tarjeta
     public function retirarBici(Medium $transporte)
     {
 	$this->Bici=time();
-        if($this->Bici < ($transporte->Hora + (86400) + 1)) 
+        if($this->Bici <= ($transporte->Hora + (86400))) 
         {
             printf("Se ha retirado la bicicleta.\n");
 	    return 0;
