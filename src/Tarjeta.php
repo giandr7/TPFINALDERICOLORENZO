@@ -164,15 +164,10 @@ class Tarjeta
             else 
             {
                 $this->plata = $this->plata - $this->bicicleta;
-                if($this->vplus > 0) 
-                {
-                    cobrar_vplus($this->vplus);
-                }
-                //Viajes plus cobrables en voleto de bici
                 $transporte->Hora = $this->Bici;
+		printf("Se ha retirado la bicicleta.\n");
             }
         }
-	printf("Se ha retirado la bicicleta.\n");
         $this->credito();
 	return 0;
     }
