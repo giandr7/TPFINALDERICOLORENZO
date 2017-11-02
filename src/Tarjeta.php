@@ -20,7 +20,6 @@ class Tarjeta
     public function __construct()
     {
         $this->plata = 0;
-        $this->viajes_hechos = 0;
         $this->vplus=0;
         $this->Bici = 0;
         
