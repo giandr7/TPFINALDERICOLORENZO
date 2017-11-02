@@ -54,8 +54,7 @@ class Tarjeta
     {
         $this->plata = $this->plata - ($cant * $this->normal);
         printf("Se han cobrado ".$cant." viaje(s) plus.\n");
-        $this->vplus = 0;
-        //Pagar restaura la cantidad de viajes plus disponibles.
+        $this->vplus = 0;     
     }
 
     public function salePlata_salePlata($monto)
@@ -73,8 +72,6 @@ class Tarjeta
             $this->plata = $this->plata+$monto;
             printf("Costo carga: $".$this->monto." . Saldo (S.E.U.O): $".$this->plata."\n");
         }
-        //Pagar luego de haber gastado los viajes plus te descuenta cant viajes plus + el tipo de viaje que pagas
-        //Eso va a estar en el otro archivo. Acà entras vos Niaggi :*
         return 0;
     }
     
@@ -159,7 +156,6 @@ class Tarjeta
             {
                printf("No se puede retirar la bicicleta.\n");
             }
-            //Viajes plus no utilizables en Bicicletas.
             else 
             {
                 $this->plata = $this->plata - $this->bicicleta;
