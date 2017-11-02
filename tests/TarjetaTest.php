@@ -118,4 +118,15 @@ class TarjetaTest extends TestCase
     $tarjeta->salePlata_salePlata(12.75);
     $tarjeta->retirarBici($bici_bici);
     $this->assertEquals($tarjeta->plata,0);
+  }
+  public function testBici2()
+  {
+    $tarjeta = new Tarjeta();
+    $bici_bici = new Medium(1,"Bicicleta",0);
+    $tarjeta->salePlata_salePlata(25.5);
+    $tarjeta->retirarBici($bici_bici);
+    $tarjeta->Bici = 1+24*60*60;
+    $tarjeta->retirarBici($bici_bici);
+    $this->assertEquals($tarjeta->plata,0);
+  }
 }
