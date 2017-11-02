@@ -15,9 +15,7 @@ class Medium
 
 class Tarjeta
 {
-    public $colectivo, $ult_colectivo, $monto, $viajes_hechos, $dia, $hora, $plata, $vplus, $medioQ, $Bici, $gg=0;
-    
-    public $estudiante, $normal, $bicicleta, $transbordo;
+    public $colectivo, $ult_colectivo, $monto, $dia, $hora, $plata, $vplus, $medioQ, $Bici, $gg=0, $estudiante, $normal, $bicicleta, $transbordo;
     
     public function __construct()
     {
@@ -138,7 +136,6 @@ class Tarjeta
           }
             $this->credito(); 
             $this->ult_colectivo = $transporte->lineaVehiculo;
-            $this->viajes_hechos = $this->viajes_hechos + 1;
         }
     }
 
