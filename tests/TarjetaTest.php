@@ -154,8 +154,7 @@ class TarjetaTest extends TestCase
     $tarjeta->salePlata_salePlata(2*8.50);
     $tarjeta->subirseCole(0, $C139);
     $tarjeta->subirseCole(0, $C136);
-    //$this->assertEquals($tarjeta->plata,($tarjeta->plata -($tarjeta->normal + $tarjeta->normalT)));
-    $this->assertEquals($tarjeta->ult_colectivo, $C136->lineaVehiculo);    
+    $this->assertEquals($tarjeta->plata,((2*8.50) - ($tarjeta->normal + $tarjeta->normalT)));   
   }
     public function testTransbordoMedio()
   {
@@ -165,7 +164,6 @@ class TarjetaTest extends TestCase
     $tarjeta->salePlata_salePlata(2*8.50);
     $tarjeta->subirseCole(1, $C139);
     $tarjeta->subirseCole(1, $C139);
-    $this->assertEquals($tarjeta->plata,($tarjeta->plata -($tarjeta->estudiante + $tarjeta->estudianteT)));
-    $this->assertEquals($tarjeta->ult_colectivo, $C136->lineaVehiculo);
+    $this->assertEquals($tarjeta->plata,((2*8.50) - ($tarjeta->estudiante + $tarjeta->estudianteT)));
   }
 }
