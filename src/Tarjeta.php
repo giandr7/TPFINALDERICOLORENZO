@@ -83,33 +83,63 @@ class Tarjeta
     {
         if(($this->vplus==2 && $this->plata < $this->normal) || $this->plata < $this->normal) 
         {
-        	printf("Bajate pibe. No pasa nadie gratis aca.");
-        	return 0;
-        } else 
-        	{
-     		if($this->ult_colectivo != $transporte->lineaVehiculo && ($this->hora + 86400) >= time())
-       		{
-          		if($medioQ==1) 
-            	{
-            		$this->plata = $this->plata - $this->estudianteT;
-          		} 
-          		else 
-          		{
-          			$this->plata = $this->plata - $this->normalT;
-          		}
-         	}
-	          elseif($medioQ==1) 
-	          { 
-	          	$this->plata = $this->plata - $this->estudiante;
-	          }
-	          else
-	          {
-	          	$this->plata = $this->plata - $this->normal;
-	          } 
-          	$this->ult_colectivo = $transporte->lineaVehiculo;
-          	$this->viajes_hechos = $this->viajes_hechos + 1;
-      		}
-	}
+          printf("Bajate pibe. No pasa nadie gratis aca.");
+          return 0;
+        } 
+        else 
+        {
+          if($this->ult_colectivo != $transporte->lineaVehiculo && ($this->hora + 86400) >= time())
+          {
+              if($medioQ==1) 
+              {
+                if($this->plata < $this->estudianteT)
+                {
+                printf("Saldo insuficiente, se ha cobrado un viaje plus. Te quedan ".(2-$this->vplus)."viajes plus\n");
+                }
+                else
+                {
+                $this->plata = $this->plata - $this->estudianteT;
+                }       
+              } 
+              else 
+              {
+                if($this->plata < $this->normalT)
+                {
+                  printf("Saldo insuficiente, se ha cobrado un viaje plus. Te quedan ".(2-$this->vplus)."viajes plus\n");
+                }
+                else
+                {
+                  $this->plata = $this->plata - $this->normalT;
+                }
+              }
+          }
+          elseif($medioQ==1) 
+          { 
+              if($this->plata < $this->estudiante)
+              {
+                printf("Saldo insuficiente, se ha cobrado un viaje plus. Te quedan ".(2-$this->vplus)."viajes plus\n");
+              }
+              else
+              {
+                $this->plata = $this->plata - $this->estudiante;
+              }
+          }
+          else
+          {
+              if($this->plata < $this->normal)
+              {
+                printf("Saldo insuficiente, se ha cobrado un viaje plus. Te quedan ".(2-$this->vplus)."viajes plus\n");
+              }
+              else
+              {
+                $this->plata = $this->plata - $this->normal;
+              };
+          }
+            credito(); 
+            $this->ult_colectivo = $transporte->lineaVehiculo;
+            $this->viajes_hechos = $this->viajes_hechos + 1;
+        }
+    }
 
     public function retirarBici(Medium $transporte)
     {
