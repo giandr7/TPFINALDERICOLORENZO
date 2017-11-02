@@ -27,7 +27,7 @@ class Tarjeta
         $this->vplus=0;
         $this->Bici = 0;
         
-        $this->estudiante =  4.45;
+        $this->estudiante =  4.25;
         $this->estudianteT = 1.32;
         
         $this->normal = 8.50;
