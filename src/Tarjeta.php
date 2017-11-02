@@ -137,7 +137,7 @@ class Tarjeta
                 $this->plata = $this->plata - $this->normal;
               };
           }
-            credito(); 
+            $this->credito(); 
             $this->ult_colectivo = $transporte->lineaVehiculo;
             $this->viajes_hechos = $this->viajes_hechos + 1;
         }
@@ -170,7 +170,7 @@ class Tarjeta
             }
         }
 	printf("Se ha retirado la bicicleta.\n");
-        credito();
+        $this->credito();
 	return 0;
     }
 }
