@@ -43,7 +43,7 @@ class Tarjeta
     
     public function viajes_plus()
     {
-        if($this->vplus=2) 
+        if($this->vplus==2) 
         {
             return 0;
         }
