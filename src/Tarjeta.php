@@ -90,7 +90,7 @@ class Tarjeta
                 if($this->plata < $this->estudianteT)
                 {
 		$this->viajes_plus();
-                printf("Saldo insuficiente, se ha cobrado un viaje plus. Te quedan ".(2-$this->vplus)."viajes plus\n");
+                printf("Saldo insuficiente, se ha cobrado un viaje plus. Te quedan ".(2-$this->vplus)." viajes plus\n");
                 }
                 else
                 {
@@ -102,7 +102,7 @@ class Tarjeta
                 if($this->plata < $this->normalT)
                 {
 		  $this->viajes_plus();
-                  printf("Saldo insuficiente, se ha cobrado un viaje plus. Te quedan ".(2-$this->vplus)."viajes plus\n");
+                  printf("Saldo insuficiente, se ha cobrado un viaje plus. Te quedan ".(2-$this->vplus)." viajes plus\n");
                 }
                 else
                 {
@@ -115,7 +115,7 @@ class Tarjeta
               if($this->plata < $this->estudiante)
               {
 		$this->viajes_plus();
-                printf("Saldo insuficiente, se ha cobrado un viaje plus. Te quedan ".(2-$this->vplus)."viajes plus\n");
+                printf("Saldo insuficiente, se ha cobrado un viaje plus. Te quedan ".(2-$this->vplus)." viajes plus\n");
               }
               else
               {
@@ -127,7 +127,7 @@ class Tarjeta
               if($this->plata < $this->normal)
               {
 		$this->viajes_plus();
-                printf("Saldo insuficiente, se ha cobrado un viaje plus. Te quedan ".(2-$this->vplus)."viajes plus\n");
+                printf("Saldo insuficiente, se ha cobrado un viaje plus. Te quedan ".(2-$this->vplus)." viajes plus\n");
               }
               else
               {
