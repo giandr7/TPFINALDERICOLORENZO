@@ -69,7 +69,7 @@ class TarjetaTest extends TestCase
   public function testViajecito_Raja_aca_pibe()
   {
     $tarjeta = new Tarjeta();
-    $C139 = new Medium(139,"Colectivo",0);
+    $C139 = new Medium(139,"GGI 212",0);
     $tarjeta->vplus=2;
     $tarjeta->subirseCole(0, $C139);
     $this->assertEquals($tarjeta->gg, 1);
@@ -78,7 +78,7 @@ class TarjetaTest extends TestCase
    public function testViajecito()
   {
     $tarjeta = new Tarjeta();
-    $C139 = new Medium(139,"Colectivo",0);
+    $C139 = new Medium(139,"GGI 212",0);
     $tarjeta->salePlata_salePlata(8.50);
     $tarjeta->subirseCole(0, $C139);
     $this->assertEquals($tarjeta->plata, 0);
@@ -87,7 +87,7 @@ class TarjetaTest extends TestCase
      public function testViajecitoNoTrans()
   {
     $tarjeta = new Tarjeta();
-    $C139 = new Medium(139,"Colectivo",0);
+    $C139 = new Medium(139,"GGI 121",0);
     $tarjeta->salePlata_salePlata(2*8.50);
     $tarjeta->subirseCole(0, $C139);
     $tarjeta->subirseCole(0, $C139);
@@ -97,7 +97,7 @@ class TarjetaTest extends TestCase
    public function testViajecitoEstudiantePechoPeludoEspaldaDePlata()
   {
     $tarjeta = new Tarjeta();
-    $C139 = new Medium(139,"Colectivo",0);
+    $C139 = new Medium(139,"GGI 212",0);
     $tarjeta->salePlata_salePlata(4.25);
     $tarjeta->subirseCole(1, $C139);
     $this->assertEquals($tarjeta->plata, 0);
@@ -106,7 +106,7 @@ class TarjetaTest extends TestCase
    public function testViajecitoPlus()
   {
     $tarjeta = new Tarjeta();
-    $C139 = new Medium(139,"Colectivo",0);
+    $C139 = new Medium(139,"GGI 121",0);
     $tarjeta->subirseCole(0, $C139);
     $this->assertEquals($tarjeta->vplus, 1);
   }
@@ -114,7 +114,7 @@ class TarjetaTest extends TestCase
   public function testBici()
   {
     $tarjeta = new Tarjeta();
-    $bici_bici = new Medium(1,"Bicicleta",0);
+    $bici_bici = new Medium(1,"BIC 123",0);
     $tarjeta->salePlata_salePlata(12.75);
     $tarjeta->retirarBici($bici_bici);
     $this->assertEquals($tarjeta->plata,0);
@@ -122,7 +122,7 @@ class TarjetaTest extends TestCase
   public function testBici2()
   {
     $tarjeta = new Tarjeta();
-    $bici_bici = new Medium(1,"Bicicleta",0);
+    $bici_bici = new Medium(1,"BIC 123",0);
     $tarjeta->salePlata_salePlata(25.5);
     $tarjeta->retirarBici($bici_bici);
     $tarjeta->Thora = (1 + (24*60*60));
@@ -132,7 +132,7 @@ class TarjetaTest extends TestCase
   public function testBici3()
   {
     $tarjeta = new Tarjeta();
-    $bici_bici = new Medium(1,"Bicicleta",0);
+    $bici_bici = new Medium(1,"BIC 123",0);
     $tarjeta->salePlata_salePlata(25.5);
     $tarjeta->retirarBici($bici_bici);
     $tarjeta->retirarBici($bici_bici);
@@ -141,7 +141,7 @@ class TarjetaTest extends TestCase
   public function testBici4()
   {
     $tarjeta = new Tarjeta();
-    $bici_bici = new Medium(1,"Bicicleta",0);
+    $bici_bici = new Medium(1,"BIC 123",0);
     $tarjeta->salePlata_salePlata(2);
     $tarjeta->retirarBici($bici_bici);
     $this->assertEquals($tarjeta->plata,2);
@@ -149,8 +149,8 @@ class TarjetaTest extends TestCase
   public function testTransbordo()
   {
     $tarjeta = new Tarjeta();
-    $C139 = new Medium(139,"Colectivo",0);
-    $C136 = new Medium(136,"Colectivo",0);
+    $C139 = new Medium(139,"GGI 212",0);
+    $C136 = new Medium(136,"ABC 123",0);
     $tarjeta->salePlata_salePlata(2*8.50);
     $tarjeta->subirseCole(0, $C139);
     $tarjeta->subirseCole(0, $C136);
@@ -159,8 +159,8 @@ class TarjetaTest extends TestCase
     public function testTransbordoMedio()
   {
    $tarjeta = new Tarjeta();
-    $C139 = new Medium(139,"Colectivo");
-    $C136 = new Medium(136,"Colectivo");
+    $C139 = new Medium(139,"GGI 212",0);
+    $C136 = new Medium(136,"ABC 123",0);
     $tarjeta->salePlata_salePlata(2*8.50);
     $tarjeta->subirseCole(1, $C139);
     $tarjeta->subirseCole(1, $C136);
@@ -169,8 +169,8 @@ class TarjetaTest extends TestCase
   public function testTransbordoMedioNoPlata()
   {
    $tarjeta = new Tarjeta();
-    $C139 = new Medium(139,"Colectivo");
-    $C136 = new Medium(136,"Colectivo");
+    $C139 = new Medium(139,"GGI 212",0);
+    $C136 = new Medium(136,"ABC 123",0);
     $tarjeta->subirseCole(0, $C139);
     $tarjeta->subirseCole(0, $C136);
     $this->assertEquals($tarjeta->vplus,2);
@@ -178,8 +178,8 @@ class TarjetaTest extends TestCase
   public function testTransbordoNormalNoPlata()
   {
    $tarjeta = new Tarjeta();
-    $C139 = new Medium(139,"Colectivo");
-    $C136 = new Medium(136,"Colectivo");
+    $C139 = new Medium(139,"GGI 212",0);
+    $C136 = new Medium(136,"ABC 123",0);
     $tarjeta->subirseCole(1, $C139);
     $tarjeta->subirseCole(1, $C136);
     $this->assertEquals($tarjeta->vplus,2);
