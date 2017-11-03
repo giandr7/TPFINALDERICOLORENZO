@@ -166,4 +166,22 @@ class TarjetaTest extends TestCase
     $tarjeta->subirseCole(1, $C136);
     $this->assertEquals($tarjeta->plata,((2*8.50)-($tarjeta->estudiante+$tarjeta->estudianteT)));
   }
+  public function testTransbordoMedioNoPlata()
+  {
+   $tarjeta = new Tarjeta();
+    $C139 = new Medium(139,"Colectivo");
+    $C136 = new Medium(136,"Colectivo");
+    $tarjeta->subirseCole(0, $C139);
+    $tarjeta->subirseCole(0, $C136);
+    $this->assertEquals($tarjeta->vplus,2);
+  }
+  public function testTransbordoNormalNoPlata()
+  {
+   $tarjeta = new Tarjeta();
+    $C139 = new Medium(139,"Colectivo");
+    $C136 = new Medium(136,"Colectivo");
+    $tarjeta->subirseCole(1, $C139);
+    $tarjeta->subirseCole(1, $C136);
+    $this->assertEquals($tarjeta->vplus,2);
+  }
 }
