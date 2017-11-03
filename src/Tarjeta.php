@@ -5,7 +5,6 @@ namespace TPFINALDERICOLORENZO;
 class Medium
 {
     public $lineaVehiculo, $ID;
-    
     public function __construct($a, $b)
     {
         $this->lineaVehiculo = $a;
@@ -16,7 +15,6 @@ class Medium
 class Tarjeta
 {
     public $colectivo, $ult_colectivo, $monto, $dia, $hora, $Thora, $plata, $vplus, $medioQ, $Bici, $gg=0, $estudiante, $normal, $bicicleta, $transbordo;
-    
     public function __construct()
     {
         $this->plata = 0;
@@ -35,8 +33,7 @@ class Tarjeta
     public function credito()
     {
         printf("Su saldo (S.E.U.O): $" . $this->plata . ".\n");
-    }
-    
+    } 
     public function viajes_plus()
     {
         if($this->vplus==2) 
@@ -46,14 +43,12 @@ class Tarjeta
         $this->vplus = $this->vplus +1;
         return 0;
     }
-    
     public function cobrar_vplus($cant)
     {
         $this->plata = $this->plata - ($cant * $this->normal);
         printf("Se han cobrado ".$cant." viaje(s) plus.\n");
         $this->vplus = 0;     
     }
-
     public function salePlata_salePlata($monto)
     {
         if($monto == 332) 
@@ -70,8 +65,7 @@ class Tarjeta
             printf("Costo carga: $".$this->monto." . Saldo (S.E.U.O): $".$this->plata."\n");
         }
         return 0;
-    }
-    
+    } 
     public function subirseCole($medioQ, Medium $transporte)
     {
 	$this->hora=time();
@@ -139,7 +133,6 @@ class Tarjeta
             $this->ult_colectivo = $transporte->ID;
         }
     }
-
     public function retirarBici(Medium $transporte)
     {
 	$this->Bici=time();
