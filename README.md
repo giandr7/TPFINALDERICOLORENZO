@@ -15,7 +15,3 @@ Status: [![Build Status](https://travis-ci.org/giandr7/TPFINALDERICOLORENZO.svg?
 Coveralls: https://coveralls.io/github/giandr7/TPFINALDERICOLORENZO
 
 Status: [![Coverage Status](https://coveralls.io/repos/github/giandr7/TPFINALDERICOLORENZO/badge.png?branch=master&service=github)](https://coveralls.io/github/giandr7/TPFINALDERICOLORENZO?branch=master)
-
-:3
-
-23/10/17 Me acorde de autoinvitarme, ahora solo falta rehacer todo el trabajo que perdi con la compu grande. Gracias EPE
