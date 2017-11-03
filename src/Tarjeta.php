@@ -83,7 +83,7 @@ class Tarjeta
         } 
         else 
         {
-          if($this->ult_colectivo != $transporte->lineaVehiculo && ($this->hora - 3600) <= $this->Thora)
+          if($this->ult_colectivo != $transporte->ID && ($this->hora - 3600) <= $this->Thora)
           {
               if($medioQ==1) 
               {
@@ -136,7 +136,7 @@ class Tarjeta
           }
 	    $this->Thora = $this->hora;
             $this->credito(); 
-            $this->ult_colectivo = $transporte->lineaVehiculo;
+            $this->ult_colectivo = $transporte->ID;
         }
     }
 
